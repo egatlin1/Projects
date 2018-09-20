@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static int s_NumberOfPlayers = 0;
+
     public float speed = 5f;
     public bool isInvertedX = false;
     public bool isInvertedY = false;
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Awake ( )
     {
+        PlayerController.s_NumberOfPlayers++;
         myRigibody2D = GetComponent<Rigidbody2D>();
 
         invertX = (isInvertedX) ? -1 : 1;
@@ -26,15 +29,14 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ( )
     {
-        float horzontal = Input.GetAxis("Horizontal") * invertX;
-        float vertical = Input.GetAxis("Vertical") * invertY;
-
-        Move(horzontal, vertical);
+        Move();
 	}
 
-    void Move ( float h, float v)
+    void Move ( )
     {
-        Vector2 movement = new Vector2(h, v);
-        myRigibody2D.AddForce(movement * speed); // * Time.deltaTime);
+        float horzontal = Input.GetAxis("Horizontal") * invertX;
+        float vertical = Input.GetAxis("Vertical") * invertY;
+        Vector2 movement = new Vector2(horzontal, vertical);
+        myRigibody2D.AddForce(movement * speed);
     }
 }
