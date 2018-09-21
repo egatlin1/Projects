@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class WinPlatform : MonoBehaviour
 {
-    public static int s_NumberOfWinPlatforms = 0;
-    public static int s_ActivatedWinPlatforms = 0;
+    EventHandler eventHandler;
 
     private bool isActivated = false;
 
     // Use this for initialization
     void Awake ( )
     {
-        WinPlatform.s_NumberOfWinPlatforms++;
+        eventHandler = FindObjectOfType<EventHandler>();
+        if (!eventHandler)
+            Debug.LogWarning("No EventHandler found");
+        eventHandler.RegisterPlatform();
     }
 
 
@@ -22,9 +24,11 @@ public class WinPlatform : MonoBehaviour
 
         if (player && !isActivated)
         {
-            WinPlatform.s_ActivatedWinPlatforms++;
+            eventHandler.PlatformActivated();
             isActivated = true;
-            Debug.Log("Triggered");
+            //Debug.Log("Triggered");
+            //Debug.Log("number of platforms: " + WinPlatform.s_NumberOfWinPlatforms);
+            //Debug.Log("number of activated platforms: " + WinPlatform.s_ActivatedWinPlatforms);
         }
     }
 
@@ -34,7 +38,7 @@ public class WinPlatform : MonoBehaviour
 
         if (player && isActivated )
         {
-            WinPlatform.s_ActivatedWinPlatforms--;
+            eventHandler.PlatformDeactivated();
             Debug.Log("Exited");
             isActivated = false;
         }
