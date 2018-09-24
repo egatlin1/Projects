@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventHandler : MonoBehaviour
 {
+    public GameObject pauseScreen;
+
+    public static bool s_IsPlaying = true;
+
     SceneController sceneController;
 
     [Tooltip("Name of the next scene to load after this level is won")] public string nextScene;
@@ -13,9 +18,15 @@ public class EventHandler : MonoBehaviour
 
     public void Awake()
     {
+        EventHandler.s_IsPlaying = true;
         sceneController = FindObjectOfType<SceneController>();
         if (!sceneController)
             Debug.LogWarning("No SceneController found");
+        if (!pauseScreen)
+            Debug.LogWarning("pauseScreen not attached to EventHandler");
+
+        pauseScreen.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -26,7 +37,20 @@ public class EventHandler : MonoBehaviour
             Debug.Log("You win!!!!!!");
             LevelWon(nextScene);
         }
+
+        if ( Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayingState();
+        }
+
     }
+
+    public void PlayingState ( )
+    {
+        EventHandler.s_IsPlaying = !EventHandler.s_IsPlaying;
+        pauseScreen.SetActive(!EventHandler.s_IsPlaying);
+    }
+
 
     public void LevelLost ( )
     {

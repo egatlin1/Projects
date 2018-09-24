@@ -17,10 +17,18 @@ public class CountDownTimer : MonoBehaviour
         eventHandler = FindObjectOfType<EventHandler>();
         if (!eventHandler)
             Debug.LogWarning("No EventHandler found");
+
+        timerText.text = countDown.ToString("f0");
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (EventHandler.s_IsPlaying)
+            updateTimer();
+    }
+
+    private void updateTimer ( )
     {
         if (countDown > 0)
         {
