@@ -1865,11 +1865,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
-        type: 2}
-      propertyPath: sassyText.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224551761111536078, guid: c3bf598f999fb3d44ae991037bc71513,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1965,21 +1960,6 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1860500483}
-    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
-        type: 2}
-      propertyPath: sassyText.Array.data[0]
-      value: Just go to the Boxes, should be easy.
-      objectReference: {fileID: 0}
-    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
-        type: 2}
-      propertyPath: sassyText.Array.data[1]
-      value: GO GO GO!!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
-        type: 2}
-      propertyPath: sassyText.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3bf598f999fb3d44ae991037bc71513, type: 2}
   m_IsPrefabAsset: 0

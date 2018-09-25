@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ( )
     {
-        if ( EventHandler.s_IsPlaying)
+        if (EventHandler.s_IsPlaying)
             Move();
 	}
 

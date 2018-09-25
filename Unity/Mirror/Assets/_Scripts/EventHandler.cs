@@ -49,6 +49,8 @@ public class EventHandler : MonoBehaviour
     {
         EventHandler.s_IsPlaying = !EventHandler.s_IsPlaying;
         pauseScreen.SetActive(!EventHandler.s_IsPlaying);
+
+        Time.timeScale = (EventHandler.s_IsPlaying) ? 1.0f : 0.0f;
     }
 
 
