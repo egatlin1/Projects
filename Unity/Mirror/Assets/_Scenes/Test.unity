@@ -1991,6 +1991,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1860500483}
+    - target: {fileID: 1604310280863510, guid: c3bf598f999fb3d44ae991037bc71513, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114489207957477000, guid: c3bf598f999fb3d44ae991037bc71513,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 60fd6318ba8a6ff418636ddea2f5e7ea,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3bf598f999fb3d44ae991037bc71513, type: 2}
   m_IsPrefabAsset: 0
