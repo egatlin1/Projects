@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
+        type: 2}
+      propertyPath: sassyText.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224551761111536078, guid: c3bf598f999fb3d44ae991037bc71513,
         type: 2}
       propertyPath: m_RootOrder
@@ -224,6 +229,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayingState
+      objectReference: {fileID: 0}
+    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
+        type: 2}
+      propertyPath: sassyText.Array.data[0]
+      value: Wait, but they aren't... huh might have to do some thinking here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114478613973624340, guid: c3bf598f999fb3d44ae991037bc71513,
+        type: 2}
+      propertyPath: sassyText.Array.data[1]
+      value: Okay okay, don't panic!!!!!!!! You got this... probably...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3bf598f999fb3d44ae991037bc71513, type: 2}
