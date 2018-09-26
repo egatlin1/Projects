@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class EventHandler : MonoBehaviour
 {
-    public GameObject pauseScreen;
-
     public static bool s_IsPlaying = true;
 
-    SceneController sceneController;
+    public GameObject pauseScreen;
 
     [Tooltip("Name of the next scene to load after this level is won")] public string nextScene;
+    [Tooltip("Seconds until the the next level loads after current level has been won")] public float loadDelay = 2.5f;
 
+    SceneController sceneController;
 
     private int numOfPlatforms = 0, numOfActivatedPlatforms = 0;
 
     public void Awake()
     {
         EventHandler.s_IsPlaying = true;
+        Time.timeScale = 1f;
         sceneController = FindObjectOfType<SceneController>();
         if (!sceneController)
             Debug.LogWarning("No SceneController found");
@@ -34,8 +35,9 @@ public class EventHandler : MonoBehaviour
     {
         if (numOfActivatedPlatforms == numOfPlatforms)
         {
-            Debug.Log("You win!!!!!!");
-            LevelWon(nextScene);
+            EventHandler.s_IsPlaying = false;
+
+            Invoke("LevelWon", loadDelay);
         }
 
         if ( Input.GetKeyDown(KeyCode.Escape))
@@ -61,9 +63,9 @@ public class EventHandler : MonoBehaviour
         sceneController.reloadCurrentScene();
     }
     
-    public void LevelWon ( string nextLevel )
+    public void LevelWon ( )
     {
-        sceneController.loadScene(nextLevel);
+        sceneController.loadScene(nextScene);
     }
 
 
