@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WinPlatform : MonoBehaviour
 {
+   public new ParticleSystem particleSystem;
+
    EventHandler eventHandler;
 
    private bool isActivated = false;
@@ -26,9 +28,7 @@ public class WinPlatform : MonoBehaviour
       {
          eventHandler.PlatformActivated();
          isActivated = true;
-         //Debug.Log("Triggered");
-         //Debug.Log("number of platforms: " + WinPlatform.s_NumberOfWinPlatforms);
-         //Debug.Log("number of activated platforms: " + WinPlatform.s_ActivatedWinPlatforms);
+         particleSystem.gameObject.SetActive(true);
       }
    }
 
@@ -41,6 +41,7 @@ public class WinPlatform : MonoBehaviour
          eventHandler.PlatformDeactivated();
          Debug.Log("Exited");
          isActivated = false;
+         particleSystem.gameObject.SetActive(false);
       }
    }
 }
