@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 1347669104021480}
   nextScene: Test 1
-  loadDelay: 2.5
+  loadDelay: 1.5
 --- !u!114 &114495354834443646
 MonoBehaviour:
   m_ObjectHideFlags: 1
