@@ -42,7 +42,6 @@ public class WinPlatform : MonoBehaviour
       if (player && isActivated)
       {
          eventHandler.PlatformDeactivated();
-         Debug.Log("Exited");
          isActivated = false;
          animator.SetBool("IsActivated", false);
          particleSystem.gameObject.SetActive(false);

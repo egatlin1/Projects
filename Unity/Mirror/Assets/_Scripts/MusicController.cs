@@ -12,11 +12,21 @@ public class MusicController : MonoBehaviour
    // Use this for initialization
    void Awake ( )
    {
-      DontDestroyOnLoad(this.gameObject);
+
+      int numOfMusicControllers = FindObjectsOfType<MusicController>().Length;
+
+      if (numOfMusicControllers > 1)
+         Destroy(gameObject);
+      else
+         DontDestroyOnLoad(this.gameObject);
 
 
       audioSource = GetComponent<AudioSource>();
 
+   }
+
+   private void Start ( )
+   {
       PickSong();
    }
 
