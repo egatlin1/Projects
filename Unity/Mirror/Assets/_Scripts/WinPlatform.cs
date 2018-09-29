@@ -7,6 +7,7 @@ public class WinPlatform : MonoBehaviour
    public new ParticleSystem particleSystem;
 
    EventHandler eventHandler;
+   Animator animator;
 
    private bool isActivated = false;
 
@@ -17,6 +18,7 @@ public class WinPlatform : MonoBehaviour
       if (!eventHandler)
          Debug.LogWarning("No EventHandler found");
       eventHandler.RegisterPlatform();
+      animator = GetComponent<Animator>();
    }
 
 
@@ -28,6 +30,7 @@ public class WinPlatform : MonoBehaviour
       {
          eventHandler.PlatformActivated();
          isActivated = true;
+         animator.SetBool("IsActivated", true);
          particleSystem.gameObject.SetActive(true);
       }
    }
@@ -41,6 +44,7 @@ public class WinPlatform : MonoBehaviour
          eventHandler.PlatformDeactivated();
          Debug.Log("Exited");
          isActivated = false;
+         animator.SetBool("IsActivated", false);
          particleSystem.gameObject.SetActive(false);
       }
    }
