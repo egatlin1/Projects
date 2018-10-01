@@ -2654,7 +2654,7 @@ Prefab:
     - target: {fileID: 114800663811310564, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: countDown
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
@@ -2687,13 +2687,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1406390607110444, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: sassyText.Array.data[4]
-      value: I'll be nice and turn that annoying timer off for this one... Just don't
-        get to used to my help.
+      value: I'll be nice and give you a little extra time for this one... Just don't
+        get too used to my help.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65410dca75e55d046af68bba9923a71b, type: 2}

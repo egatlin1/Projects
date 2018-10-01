@@ -2072,7 +2072,7 @@ Prefab:
     - target: {fileID: 114800663811310564, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: countDown
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
@@ -2088,6 +2088,10 @@ Prefab:
         type: 2}
       propertyPath: nextScene
       value: Puzzle 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406390607110444, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
