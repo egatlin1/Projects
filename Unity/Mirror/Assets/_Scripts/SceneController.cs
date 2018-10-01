@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
+   private void Awake ( )
+   {
+      Time.timeScale = 1f;
+   }
 
-    public void loadScene ( string sceneName )
+   public void loadScene ( string sceneName )
     {
         SceneManager.LoadScene(sceneName);
     }
@@ -13,7 +17,6 @@ public class SceneController : MonoBehaviour
 
     public void reloadCurrentScene ( )
     {
-        Debug.Log("" + SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
