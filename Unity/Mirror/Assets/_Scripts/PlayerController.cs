@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
    private Rigidbody2D myRigibody2D;
    private int invertX;
    private int invertY;
-
+   private bool canTeleport = true;
 
    // Use this for initialization
    void Awake ( )
@@ -39,5 +39,15 @@ public class PlayerController : MonoBehaviour
       float vertical = Input.GetAxis("Vertical") * invertY;
       Vector2 movement = new Vector2(horzontal, vertical);
       myRigibody2D.AddForce(movement * speed);
+   }
+
+   public bool TeleportState ( )
+   {
+      return canTeleport;
+   }
+
+   public void changeTeleportState ( )
+   {
+      canTeleport = !canTeleport;
    }
 }
