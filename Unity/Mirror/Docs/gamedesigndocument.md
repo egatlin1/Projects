@@ -12,9 +12,8 @@
 
 Top down view, simple controls, simple puzzles to start that get more complex as the levels progress
 
-### Mechanics
-
 ### Win Scenario
+
 
 #### Each Puzzle
 
