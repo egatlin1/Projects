@@ -1046,7 +1046,7 @@ Prefab:
     - target: {fileID: 114800663811310564, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: countDown
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
@@ -4223,11 +4223,11 @@ Transform:
   - {fileID: 687561499}
   - {fileID: 1693640529}
   - {fileID: 787551616}
+  - {fileID: 550553084}
   - {fileID: 254311842}
   - {fileID: 1243728114}
   - {fileID: 2046749233}
   - {fileID: 192238011}
-  - {fileID: 550553084}
   - {fileID: 1062162533}
   - {fileID: 438647104}
   - {fileID: 1897950008}
