@@ -29,8 +29,6 @@ public class Teleporter : MonoBehaviour
          player.gameObject.transform.position = otherTeleporter.transform.position;
 
          player.changeTeleportState();
-
-         Debug.Log("in teleporter");
       }
       else if ( player )
       {

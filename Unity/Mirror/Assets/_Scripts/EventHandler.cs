@@ -59,7 +59,6 @@ public class EventHandler : MonoBehaviour
    public void LevelLost ( )
    {
       //TODO: make trasition smoother
-      Debug.Log("Level Lost");
       sceneController.reloadCurrentScene();
    }
 
