@@ -2043,52 +2043,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4852444192453160, guid: b8561a025205b714682ca05b3a789795,
     type: 2}
   m_PrefabInternal: {fileID: 943990996}
---- !u!1001 &454629614
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4622802819051042, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1795553173221182, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 10a4533e6cfd50d43b0dfac3863a2b76, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1001 &457867750
 Prefab:
   m_ObjectHideFlags: 0
