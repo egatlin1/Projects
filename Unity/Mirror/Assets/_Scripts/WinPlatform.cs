@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinPlatform : MonoBehaviour
 {
-   public new ParticleSystem particleSystem;
+   public ParticleSystem particleSystem;
 
    EventHandler eventHandler;
    Animator animator;
