@@ -52,6 +52,12 @@ EditorBuildSettings:
     guid: 6a4170dcb2aefbe458e9b63475ac45a4
   - enabled: 1
     path: Assets/_Scenes/Puzzle 14.unity
+    guid: 3c6b042ff31144d4d86298f54ec78a59
+  - enabled: 1
+    path: Assets/_Scenes/Puzzle 15.unity
+    guid: 4859eadaf2ef51c4daec646b4abcbee4
+  - enabled: 1
+    path: Assets/_Scenes/Puzzle 16.unity
     guid: 8d55637e056086145a33a38eecf3462a
   - enabled: 1
     path: Assets/_Scenes/EndScene.unity
