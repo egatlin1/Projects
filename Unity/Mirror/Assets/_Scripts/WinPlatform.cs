@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WinPlatform : MonoBehaviour
 {
-   public ParticleSystem particleSystem;
+   public ParticleSystem m_particleSystem;
 
    EventHandler eventHandler;
    Animator animator;
@@ -20,7 +20,7 @@ public class WinPlatform : MonoBehaviour
       eventHandler.RegisterPlatform();
       animator = GetComponent<Animator>();
    }
-
+   
 
    private void OnTriggerEnter2D ( Collider2D other )
    {
@@ -31,7 +31,7 @@ public class WinPlatform : MonoBehaviour
          eventHandler.PlatformActivated();
          isActivated = true;
          animator.SetBool("IsActivated", true);
-         particleSystem.gameObject.SetActive(true);
+         m_particleSystem.gameObject.SetActive(true);
       }
    }
 
@@ -44,7 +44,7 @@ public class WinPlatform : MonoBehaviour
          eventHandler.PlatformDeactivated();
          isActivated = false;
          animator.SetBool("IsActivated", false);
-         particleSystem.gameObject.SetActive(false);
+         m_particleSystem.gameObject.SetActive(false);
       }
    }
 }
