@@ -180,14 +180,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Maneuver your playing into the red platform to win each puzzle ( all platforms
-    must be activated at the same time to win the level )
-
-
-    Use WASD or arrow keys to move
-
-
-    Press ESC when in a level to bring up the pause menu'
+  m_Text: "Maneuver your player\n into the red platform to win each puzzle ( all platforms
+    must be activated at the same time to win the level )\n\nUse WASD or arrow keys
+    to move\n\nPress ESC when in a level to bring up the pause menu"
 --- !u!222 &5698369
 CanvasRenderer:
   m_ObjectHideFlags: 0
