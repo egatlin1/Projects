@@ -44,6 +44,10 @@ public class EventHandler : MonoBehaviour
       {
          PlayingState();
       }
+      else if ( EventHandler.s_IsPlaying && Input.GetKeyDown(KeyCode.R))
+      {
+         sceneController.reloadCurrentScene();
+      }
 
    }
 
