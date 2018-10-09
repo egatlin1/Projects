@@ -190,7 +190,7 @@ MonoBehaviour:
     Press ESC when in a level to bring up the pause menu
 
 
-    Press R WHen playing to restart that level'
+    Press R when playing to restart that level'
 --- !u!222 &5698369
 CanvasRenderer:
   m_ObjectHideFlags: 0
