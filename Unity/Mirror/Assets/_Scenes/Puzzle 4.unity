@@ -1469,7 +1469,7 @@ Prefab:
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: sassyText.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4248457554221468, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1521,11 +1521,16 @@ Prefab:
     - target: {fileID: 114800663811310564, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: countDown
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1406390607110444, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
+        type: 2}
+      propertyPath: sassyText.Array.data[2]
+      value: Maybe try hooking that right one?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65410dca75e55d046af68bba9923a71b, type: 2}

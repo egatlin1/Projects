@@ -2550,12 +2550,13 @@ Prefab:
     - target: {fileID: 114800663811310564, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: countDown
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: sassyText.Array.data[1]
-      value: This looks tricky, don't blame you if you are here for a while.
+      value: Hmmmm, the top left looks different on each one... maybe you can hook
+        on one of those blocks?
       objectReference: {fileID: 0}
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1bebe538fd20046aedfd6ed20f1d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 60
+  speed: 70
   isInvertedX: 0
   isInvertedY: 0
 --- !u!198 &198494760443156874

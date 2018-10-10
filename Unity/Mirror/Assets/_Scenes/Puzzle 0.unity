@@ -273,6 +273,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114800663811310564, guid: 65410dca75e55d046af68bba9923a71b,
+        type: 2}
+      propertyPath: countDown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
+        type: 2}
+      propertyPath: sassyText.Array.data[0]
+      value: Just got to get to the red box, you can do it!!!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65410dca75e55d046af68bba9923a71b, type: 2}
   m_IsPrefabAsset: 0
