@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationController : MonoBehaviour
+public class GolfBallController : MonoBehaviour
 {
+
    public float rotationSpeed = 30f;
    public float moveSpeed = 2000f;
    public bool canTurn = true;
@@ -34,7 +35,10 @@ public class RotationController : MonoBehaviour
 
    private void ResetBall ( )
    {
-      transform.rotation = Quaternion.Euler( Vector3.zero);
+      Debug.Log("ResetBall");
+
+      m_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+      transform.rotation = Quaternion.Euler(Vector3.zero);
       directionLine.enabled = true;
       canTurn = true;
       hasBeenHit = false;
@@ -46,7 +50,7 @@ public class RotationController : MonoBehaviour
    private void Update ( )
    {
 
-      if ( Input.GetKeyDown(KeyCode.Space) && !canTurn)
+      if (Input.GetKeyDown(KeyCode.Space) && !canTurn)
       {
          m_rigidbody.constraints = RigidbodyConstraints.None;
          force.enabled = true;
@@ -64,13 +68,14 @@ public class RotationController : MonoBehaviour
       float h = Input.GetAxis("Horizontal");
       float v = Input.GetAxis("Vertical");
 
-      if ( canTurn && m_rigidbody.velocity == Vector3.zero)
+      if (canTurn && m_rigidbody.velocity == Vector3.zero)
       {
          v = 0f;
       }
-      else if (!canTurn && m_rigidbody.velocity == Vector3.zero)
+      if (!canTurn && m_rigidbody.velocity == Vector3.zero)
       {
          h = 0f;
+         Debug.Log("Can't turn");
       }
 
       transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
@@ -79,7 +84,6 @@ public class RotationController : MonoBehaviour
 
       if (m_rigidbody.velocity == Vector3.zero && hasBeenHit && startingPos != transform.position)
       {
-         Debug.Log("Here");
          ResetBall();
       }
    }

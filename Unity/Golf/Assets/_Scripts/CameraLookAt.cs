@@ -18,11 +18,11 @@ public class CameraLookAt : MonoBehaviour
    public bool canFollow = true;
 
 
-   private RotationController ball;
+   private GolfBallController ball;
 
    private void Awake ( )
    {
-      ball = FindObjectOfType<RotationController>();
+      ball = FindObjectOfType<GolfBallController>();
 
       ball.canTurn = canFollow;
    }
