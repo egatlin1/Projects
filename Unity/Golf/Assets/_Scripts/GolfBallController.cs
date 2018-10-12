@@ -6,28 +6,26 @@ public class GolfBallController : MonoBehaviour
 {
 
    public float rotationSpeed = 30f;
-   public float moveSpeed = 2000f;
    public bool canTurn = true;
 
    private bool hasBeenHit = false;
    private Vector3 startingPos;
-
-   private ConstantForce force;
+   
    private LineRenderer directionLine;
    private CameraLookAt m_camera;
    private Rigidbody m_rigidbody;
+   private Launcher launcher;
 
    private void Awake ( )
    {
-      force = GetComponent<ConstantForce>();
       directionLine = GetComponent<LineRenderer>();
       m_camera = FindObjectOfType<CameraLookAt>();
       m_rigidbody = GetComponent<Rigidbody>();
+      launcher = GetComponent<Launcher>();
+
 
       startingPos = transform.position;
 
-      force.relativeForce = new Vector3(0f, 0f, moveSpeed);
-      force.enabled = false;
 
       m_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
 
@@ -35,14 +33,13 @@ public class GolfBallController : MonoBehaviour
 
    private void ResetBall ( )
    {
-      Debug.Log("ResetBall");
 
       m_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
       transform.rotation = Quaternion.Euler(Vector3.zero);
       directionLine.enabled = true;
       canTurn = true;
       hasBeenHit = false;
-      m_camera.canFollow = true;
+      m_camera.ResetCamera();
       startingPos = transform.position;
    }
 
@@ -53,12 +50,11 @@ public class GolfBallController : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.Space) && !canTurn)
       {
          m_rigidbody.constraints = RigidbodyConstraints.None;
-         force.enabled = true;
+         launcher.LaunchGolfBall();
          directionLine.enabled = false;
          hasBeenHit = true;
       }
-
-      //Debug.Log(rigidbody.velocity);
+      
 
    }
 
@@ -75,12 +71,9 @@ public class GolfBallController : MonoBehaviour
       if (!canTurn && m_rigidbody.velocity == Vector3.zero)
       {
          h = 0f;
-         Debug.Log("Can't turn");
       }
 
       transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
-
-      force.enabled = false;
 
       if (m_rigidbody.velocity == Vector3.zero && hasBeenHit && startingPos != transform.position)
       {

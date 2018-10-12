@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 75339790105797634}
   - component: {fileID: 120454311630483040}
   - component: {fileID: 114245379526329778}
+  - component: {fileID: 114225099240815638}
   m_Layer: 0
   m_Name: Golf Ball
   m_TagString: GolfBall
@@ -39,8 +40,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653200571603938}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.089, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.051, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,6 +115,18 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!114 &114225099240815638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1653200571603938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee0820d93dd0ed438a11f7d1138a279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLaunchPower: 1000
 --- !u!114 &114245379526329778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 30
-  moveSpeed: 2000
   canTurn: 1
 --- !u!120 &120454311630483040
 LineRenderer:
