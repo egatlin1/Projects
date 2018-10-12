@@ -42,7 +42,7 @@ public class Launcher : MonoBehaviour
 
    public void SetLaunchPower ( float newPower )
    {
-      launchPower = newPower;
+      maxLaunchPower = newPower;
    }
    
    void Update ( )
