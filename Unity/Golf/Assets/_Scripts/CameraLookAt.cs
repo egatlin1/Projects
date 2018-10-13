@@ -19,13 +19,13 @@ public class CameraLookAt : MonoBehaviour
 
 
    private GolfBallController ball;
-   private Camera m_camera;
+   //private Camera m_camera;
 
 
    private void Awake ( )
    {
       ball = FindObjectOfType<GolfBallController>();
-      m_camera = GetComponent<Camera>();
+      //m_camera = GetComponent<Camera>();
       //ball.canTurn = canFollow;
    }
 

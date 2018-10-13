@@ -27,14 +27,14 @@ public class GolfBallController : MonoBehaviour
       startingPos = transform.position;
 
 
-      m_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+      m_rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
    }
 
    private void ResetBall ( )
    {
 
-      m_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+      m_rigidbody.constraints = RigidbodyConstraints.FreezeAll;
       transform.rotation = Quaternion.Euler(Vector3.zero);
       directionLine.enabled = true;
       canTurn = true;
