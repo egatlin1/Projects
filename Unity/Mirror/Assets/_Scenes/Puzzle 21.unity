@@ -9170,7 +9170,7 @@ Prefab:
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: sassyText.Array.data[2]
-      value: Looks liek the last one, just uh... Mirrored!
+      value: Looks like the last one, just uh... Mirrored!
       objectReference: {fileID: 0}
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
