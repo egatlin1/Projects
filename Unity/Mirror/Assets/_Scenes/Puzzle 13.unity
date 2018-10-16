@@ -5138,7 +5138,7 @@ Prefab:
     - target: {fileID: 114234758725955226, guid: 65410dca75e55d046af68bba9923a71b,
         type: 2}
       propertyPath: sassyText.Array.data[4]
-      value: For this level of madness I going to give you a free pass, no timer...
+      value: For this level of madness I'm going to give you a free pass, no timer...
         This is just getting crazy!!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
