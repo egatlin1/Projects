@@ -38,10 +38,18 @@ public class CameraLookAt : MonoBehaviour
 
       if (Input.GetKeyDown(KeyCode.LeftShift) && canFollow)
       {
+         SwitchToChangeAngle();
+      }
+
+   }
+
+   public void SwitchToChangeAngle ( )
+   {
+      if (canFollow)
+      {
          canFollow = false;
          ball.canTurn = false;
       }
-
    }
 
    public void Refresh ( )

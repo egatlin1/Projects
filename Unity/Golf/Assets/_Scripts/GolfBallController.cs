@@ -8,6 +8,8 @@ public class GolfBallController : MonoBehaviour
    public float rotationSpeed = 30f;
    public bool canTurn = true;
 
+   public GameObject UI;
+
    private bool hasBeenHit = false;
    private Vector3 startingPos;
    
@@ -15,6 +17,7 @@ public class GolfBallController : MonoBehaviour
    private CameraLookAt m_camera;
    private Rigidbody m_rigidbody;
    private Launcher launcher;
+
 
    private void Awake ( )
    {
@@ -41,18 +44,16 @@ public class GolfBallController : MonoBehaviour
       hasBeenHit = false;
       m_camera.ResetCamera();
       startingPos = transform.position;
+      UI.SetActive(true);
    }
 
 
    private void Update ( )
    {
 
-      if (Input.GetKeyDown(KeyCode.Space) && !canTurn)
+      if (Input.GetKeyDown(KeyCode.Space) )
       {
-         m_rigidbody.constraints = RigidbodyConstraints.None;
-         launcher.LaunchGolfBall();
-         directionLine.enabled = false;
-         hasBeenHit = true;
+         LaunchBall();
       }
       
 
@@ -80,4 +81,18 @@ public class GolfBallController : MonoBehaviour
          ResetBall();
       }
    }
+
+
+   public void LaunchBall ( )
+   {
+      if (!canTurn && m_rigidbody.velocity == Vector3.zero)
+      {
+         m_rigidbody.constraints = RigidbodyConstraints.None;
+         launcher.LaunchGolfBall();
+         directionLine.enabled = false;
+         hasBeenHit = true;
+         UI.SetActive(false);
+      }
+   }
+
 }
