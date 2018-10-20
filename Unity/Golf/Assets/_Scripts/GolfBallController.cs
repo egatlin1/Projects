@@ -7,6 +7,7 @@ public class GolfBallController : MonoBehaviour
 
    public float rotationSpeed = 30f;
    public bool canTurn = true;
+   public bool canReset = true;
 
    public GameObject UI;
 
@@ -36,7 +37,6 @@ public class GolfBallController : MonoBehaviour
 
    private void ResetBall ( )
    {
-
       m_rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 
       // makes the ball always look at the flag when it resets
@@ -84,7 +84,7 @@ public class GolfBallController : MonoBehaviour
 
       transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
 
-      if (m_rigidbody.velocity == Vector3.zero && hasBeenHit && startingPos != transform.position)
+      if (m_rigidbody.velocity == Vector3.zero && hasBeenHit && startingPos != transform.position && canReset)
       {
          ResetBall();
       }
