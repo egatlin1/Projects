@@ -17,7 +17,7 @@ public class GolfBallController : MonoBehaviour
    private CameraLookAt m_camera;
    private Rigidbody m_rigidbody;
    private Launcher launcher;
-
+   private Transform flag;
 
    private void Awake ( )
    {
@@ -25,12 +25,12 @@ public class GolfBallController : MonoBehaviour
       m_camera = FindObjectOfType<CameraLookAt>();
       m_rigidbody = GetComponent<Rigidbody>();
       launcher = GetComponent<Launcher>();
-
+      flag = GameObject.FindGameObjectWithTag("Flag").transform;
 
       startingPos = transform.position;
 
 
-      m_rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+      ResetBall();
 
    }
 
@@ -38,7 +38,15 @@ public class GolfBallController : MonoBehaviour
    {
 
       m_rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-      transform.rotation = Quaternion.Euler(Vector3.zero);
+
+      // makes the ball always look at the flag when it resets
+      transform.LookAt(flag);
+      Quaternion rotation = transform.rotation;
+      rotation.x = 0.00000f;
+      rotation.z = 0.00000f;
+      transform.rotation = rotation;
+
+
       directionLine.enabled = true;
       canTurn = true;
       hasBeenHit = false;
