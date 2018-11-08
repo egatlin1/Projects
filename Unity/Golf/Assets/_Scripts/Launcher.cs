@@ -9,16 +9,19 @@ public class Launcher : MonoBehaviour
 
    public float launchPower;
 
+   public Slider powerBar;
+
    private ConstantForce force;
 
-   public Slider powerBar;
+   private AudioSource sound;
+
 
    // Use this for initialization
    void Awake ( )
    {
 
       force = GetComponent<ConstantForce>();
-      //powerBar = FindObjectOfType<Slider>();
+      sound = GetComponent<AudioSource>();
 
 
       launchPower = maxLaunchPower * powerBar.value;
@@ -30,6 +33,7 @@ public class Launcher : MonoBehaviour
    public void LaunchGolfBall ( )
    {
       force.enabled = true;
+      sound.Play();
       Invoke("DisableLaunch", .02f);
    }
 
