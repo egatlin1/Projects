@@ -10,13 +10,13 @@ public class GolfBallController : MonoBehaviour
    public bool canReset = true;
 
    public GameObject UI;
+   public Rigidbody m_rigidbody;
 
    private bool hasBeenHit = false;
    private Vector3 startingPos;
    
    private LineRenderer directionLine;
    private CameraLookAt m_camera;
-   private Rigidbody m_rigidbody;
    private Launcher launcher;
    private Transform flag;
 

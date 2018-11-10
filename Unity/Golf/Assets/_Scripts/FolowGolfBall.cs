@@ -4,18 +4,38 @@ using UnityEngine;
 
 public class FolowGolfBall : MonoBehaviour
 {
-   Transform GolfBallPosition;
+   GolfBallController GolfBallPosition;
    public float height;
+
+   public GameObject arrowIcon;
+
+
    // Use this for initialization
    void Awake ( )
    {
-      GolfBallPosition = FindObjectOfType<GolfBallController>().transform;
-      transform.position = new Vector3(GolfBallPosition.position.x, height, GolfBallPosition.position.z);
+      GolfBallPosition = FindObjectOfType<GolfBallController>();
+      transform.position = new Vector3(GolfBallPosition.transform.position.x, height, GolfBallPosition.transform.position.z);
    }
 
    // Update is called once per frame
    void Update ( )
    {
-      transform.position = new Vector3(GolfBallPosition.position.x, height, GolfBallPosition.position.z);
+      transform.position = new Vector3(GolfBallPosition.transform.position.x, height, GolfBallPosition.transform.position.z);
+
+      if ( GolfBallPosition.m_rigidbody.velocity == Vector3.zero )
+      {
+         arrowIcon.SetActive(true);
+         Vector3 ball = GolfBallPosition.transform.rotation.eulerAngles;
+         Vector3 arrow = transform.rotation.eulerAngles;
+
+         arrow = new Vector3(arrow.x, ball.y, arrow.z);
+
+         transform.rotation = Quaternion.Euler(arrow);
+      }
+      else
+      {
+         arrowIcon.SetActive(false);
+      }
+
    }
 }
