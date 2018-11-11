@@ -13,7 +13,7 @@ public class GolfBallController : MonoBehaviour
    public Rigidbody m_rigidbody;
 
    private bool hasBeenHit = false;
-   private Vector3 startingPos;
+   public Vector3 startingPos;
    
    private LineRenderer directionLine;
    private CameraLookAt m_camera;
@@ -33,6 +33,12 @@ public class GolfBallController : MonoBehaviour
 
       ResetBall();
 
+   }
+
+   public void RestBallToLastPos ( )
+   {
+      transform.position = startingPos;
+      ResetBall();
    }
 
    private void ResetBall ( )
