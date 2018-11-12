@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 4635422279654340}
   - component: {fileID: 33404040719954588}
   - component: {fileID: 23816072384542590}
-  - component: {fileID: 95062456320000486}
   m_Layer: 0
   m_Name: golf-flag
   m_TagString: Flag
@@ -1317,24 +1316,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95062456320000486
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1124985767906862}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 27f1110dee575da45bdb8815c16153e0, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114004495265013308
 MonoBehaviour:
   m_ObjectHideFlags: 1
