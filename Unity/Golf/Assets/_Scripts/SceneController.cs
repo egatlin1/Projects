@@ -24,9 +24,12 @@ public class SceneController : MonoBehaviour
 
    public void LoadLevel ( string levelName)
    {
-      StartCoroutine(LoadAsynchronously(levelName));
+      StartCoroutine(LoadAsynchronously(levelName));  
+   }
 
-      loadingScreen.SetActive(false); //TODO: test to see if this works
+   public void ExitGame ( )
+   {
+      Application.Quit();
    }
 
    IEnumerator LoadAsynchronously ( string levelName )
@@ -44,6 +47,6 @@ public class SceneController : MonoBehaviour
 
          yield return null;
       }
-
+      loadingScreen.SetActive(false); //TODO: test to see if this works
    }
 }
