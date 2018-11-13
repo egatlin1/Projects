@@ -86,9 +86,17 @@ public class GolfBallController : MonoBehaviour
       if (!canTurn && m_rigidbody.velocity == Vector3.zero)
       {
          h = 0f;
+
+         //Quaternion rotation = transform.rotation;
+         //Vector3 angle = rotation.eulerAngles;
+         //angle.x = Mathf.Clamp(angle.x, -60, 0);
+         //Debug.Log(angle);
+         //transform.rotation = Quaternion.Euler(angle.x, angle.y, angle.z);
       }
 
+
       transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
+
 
       if (m_rigidbody.velocity == Vector3.zero && hasBeenHit && startingPos != transform.position && canReset)
       {
