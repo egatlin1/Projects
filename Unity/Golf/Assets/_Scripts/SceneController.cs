@@ -10,6 +10,9 @@ public class SceneController : MonoBehaviour
    public GameObject loadingScreen;
    public Slider loadingBar;
 
+   bool oneShot = false;
+
+
    // Use this for initialization
    void Awake ( )
    {
@@ -24,7 +27,20 @@ public class SceneController : MonoBehaviour
 
    public void LoadLevel ( string levelName)
    {
-      StartCoroutine(LoadAsynchronously(levelName));  
+      if (!oneShot)
+         StartCoroutine(LoadAsynchronously(levelName));
+      else
+      {
+         StartCoroutine(LoadAsynchronously("Menu"));
+         oneShot = false;
+      }
+   }
+
+   public void LoadLevelOneShot ( string levelName )
+   {
+      LoadLevel(levelName);
+
+      oneShot = true;
    }
 
    public void ExitGame ( )

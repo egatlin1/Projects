@@ -23,6 +23,11 @@ public class MainMenuController : MonoBehaviour
       sceneController.LoadLevel(name);
    }
 
+   public void LoadLevelSingle( string name )
+   {
+      sceneController.LoadLevelOneShot(name);
+   }
+
    public void ExitProgram ( )
    {
       sceneController.ExitGame();
