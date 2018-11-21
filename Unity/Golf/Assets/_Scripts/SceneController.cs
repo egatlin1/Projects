@@ -43,6 +43,11 @@ public class SceneController : MonoBehaviour
       oneShot = true;
    }
 
+   public void ReloadCurrentLevel ( )
+   {
+      LoadAsynchronously(SceneManager.GetActiveScene().name);
+   }
+
    public void ExitGame ( )
    {
       Application.Quit();
