@@ -19,6 +19,7 @@ public class GolfBallController : MonoBehaviour
    private CameraLookAt m_camera;
    private Launcher launcher;
    private Transform flag;
+   private HitCounter counter;
 
    private void Awake ( )
    {
@@ -27,6 +28,8 @@ public class GolfBallController : MonoBehaviour
       m_rigidbody = GetComponent<Rigidbody>();
       launcher = GetComponent<Launcher>();
       flag = GameObject.FindGameObjectWithTag("Flag").transform;
+      counter = FindObjectOfType<HitCounter>();
+
 
       startingPos = transform.position;
 
@@ -109,6 +112,7 @@ public class GolfBallController : MonoBehaviour
    {
       if (!canTurn && m_rigidbody.velocity == Vector3.zero)
       {
+         counter.AddHit();
          m_rigidbody.constraints = RigidbodyConstraints.None;
          launcher.LaunchGolfBall();
          directionLine.enabled = false;
