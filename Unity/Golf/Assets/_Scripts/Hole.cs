@@ -15,7 +15,7 @@ public class Hole : MonoBehaviour
    GolfBallController golfball;
    SceneController sceneController;
 
-   private void Awake ( )
+   private void Start ( )
    {
       golfball = FindObjectOfType<GolfBallController>();
       sceneController = FindObjectOfType<SceneController>();

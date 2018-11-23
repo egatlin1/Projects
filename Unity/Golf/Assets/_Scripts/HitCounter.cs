@@ -19,7 +19,7 @@ public class HitCounter : MonoBehaviour
 
    private void SetText ( )
    {
-      text.text = "Par " + par + ": Hit " + hits;
+      text.text = "Par " + par + ": Stroke " + hits;
    }
 
    public void AddHit ( )

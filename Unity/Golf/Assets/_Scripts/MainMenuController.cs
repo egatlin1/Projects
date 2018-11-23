@@ -6,7 +6,7 @@ public class MainMenuController : MonoBehaviour
 {
    SceneController sceneController;
    // Use this for initialization
-   void Awake ( )
+   void Start ( )
    {
       sceneController = FindObjectOfType<SceneController>();
    }

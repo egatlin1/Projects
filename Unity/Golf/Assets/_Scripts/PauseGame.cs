@@ -27,6 +27,6 @@ public class PauseGame : MonoBehaviour
    {
       PauseGame.s_isPlaying = !PauseGame.s_isPlaying;
       Time.timeScale = (PauseGame.s_isPlaying) ? 1f : 0f;
-      pauseScreen.SetActive(PauseGame.s_isPlaying);
+      pauseScreen.SetActive(!PauseGame.s_isPlaying);
    }
 }
