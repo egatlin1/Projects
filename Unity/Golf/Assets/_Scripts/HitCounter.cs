@@ -8,6 +8,7 @@ public class HitCounter : MonoBehaviour
 
    public int par = 0;
    private int hits = 0;
+   private int maxHits = 0;
 
    public Text text;
    public Text result;
@@ -16,7 +17,7 @@ public class HitCounter : MonoBehaviour
    void Start ( )
    {
       SetText();
-
+      maxHits = par + 5;
       result.text = "";
       
    }
@@ -80,9 +81,17 @@ public class HitCounter : MonoBehaviour
                break;
 
          }
-
-      
    }
 
+   public bool MaxHits ( )
+   {
+      if ( hits == maxHits )
+      {
+         result.text = "Stroke out";
+         return true;
+      }
+      else
+         return false;
+   }
 
 }

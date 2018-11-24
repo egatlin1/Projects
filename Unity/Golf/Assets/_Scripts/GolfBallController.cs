@@ -8,11 +8,13 @@ public class GolfBallController : MonoBehaviour
    public float rotationSpeed = 30f;
    public bool canTurn = true;
    public bool canReset = true;
+   
 
    public GameObject UI;
    public Rigidbody m_rigidbody;
 
    private bool hasBeenHit = false;
+   private bool isMaxHits = false;
    public Vector3 startingPos;
    
    private LineRenderer directionLine;
@@ -65,16 +67,6 @@ public class GolfBallController : MonoBehaviour
    }
 
 
-   private void Update ( )
-   {
-
-      if (Input.GetKeyDown(KeyCode.Space) )
-      {
-         LaunchBall();
-      }
-      
-
-   }
 
    void FixedUpdate ( )
    {
@@ -97,20 +89,21 @@ public class GolfBallController : MonoBehaviour
          //transform.rotation = Quaternion.Euler(angle.x, angle.y, angle.z);
       }
 
-
-      transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
+      if ( !isMaxHits)
+         transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
 
 
       if (m_rigidbody.velocity.magnitude < .5f && hasBeenHit && startingPos != transform.position && canReset)
       {
          ResetBall();
+         isMaxHits = counter.MaxHits();
       }
    }
 
 
    public void LaunchBall ( )
    {
-      if (!canTurn && m_rigidbody.velocity == Vector3.zero)
+      if (!canTurn && m_rigidbody.velocity == Vector3.zero && !isMaxHits )
       {
          counter.AddHit();
          m_rigidbody.constraints = RigidbodyConstraints.None;
