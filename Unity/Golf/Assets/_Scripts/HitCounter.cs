@@ -13,12 +13,15 @@ public class HitCounter : MonoBehaviour
    public Text text;
    public Text result;
 
+
    // Use this for initialization
    void Start ( )
    {
       SetText();
       maxHits = par + 5;
       result.text = "";
+
+
       
    }
 
@@ -88,10 +91,15 @@ public class HitCounter : MonoBehaviour
       if ( hits == maxHits )
       {
          result.text = "Stroke out";
+         Invoke("ResetLevel", 3);
          return true;
       }
       else
          return false;
    }
 
+   private void ResetLevel ( )
+   {
+      FindObjectOfType<SceneController>().ReloadCurrentLevel();
+   }
 }

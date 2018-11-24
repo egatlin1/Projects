@@ -45,7 +45,7 @@ public class SceneController : MonoBehaviour
 
    public void ReloadCurrentLevel ( )
    {
-      LoadAsynchronously(SceneManager.GetActiveScene().name);
+      StartCoroutine(LoadAsynchronously(SceneManager.GetActiveScene().name));
    }
 
    public void ExitGame ( )
@@ -64,7 +64,6 @@ public class SceneController : MonoBehaviour
          float progress = Mathf.Clamp01(operation.progress / .9f);
 
          loadingBar.value = progress;
-         Debug.Log(progress);
 
          yield return null;
       }
