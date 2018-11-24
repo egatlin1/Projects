@@ -101,7 +101,7 @@ public class GolfBallController : MonoBehaviour
       transform.Rotate(v * rotationSpeed * Time.deltaTime, h * rotationSpeed * Time.deltaTime, 0);
 
 
-      if (m_rigidbody.velocity == Vector3.zero && hasBeenHit && startingPos != transform.position && canReset)
+      if (m_rigidbody.velocity.magnitude < .5f && hasBeenHit && startingPos != transform.position && canReset)
       {
          ResetBall();
       }

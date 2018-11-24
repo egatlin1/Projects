@@ -14,11 +14,13 @@ public class Hole : MonoBehaviour
    public Text text;
    GolfBallController golfball;
    SceneController sceneController;
+   HitCounter hit;
 
    private void Start ( )
    {
       golfball = FindObjectOfType<GolfBallController>();
       sceneController = FindObjectOfType<SceneController>();
+      hit = FindObjectOfType<HitCounter>();
    }
 
    private void Update ( )
@@ -36,6 +38,7 @@ public class Hole : MonoBehaviour
    {
       if (other.tag == "GolfBall")
       {
+         hit.ShowResults();
          Debug.Log("in the hole!!!!!");
          Invoke("RoundOver", timeBrforeNextLevel);
          other.GetComponent<GolfBallController>().canReset = false;

@@ -10,12 +10,17 @@ public class HitCounter : MonoBehaviour
    private int hits = 0;
 
    public Text text;
+   public Text result;
 
    // Use this for initialization
    void Start ( )
    {
       SetText();
+
+      result.text = "";
+      
    }
+
 
    private void SetText ( )
    {
@@ -30,6 +35,53 @@ public class HitCounter : MonoBehaviour
       {
          text.color = Color.red;
       }
+   }
+
+
+   public void ShowResults ( )
+   {
+
+      if (hits == 1)
+         result.text = "Hole In One!";
+      else
+         switch ( hits - par )
+         {
+            case -4:
+               result.text = "Condor!";
+               break;
+            case -3:
+               result.text = "Albatross!";
+               break;
+            case -2:
+               result.text = "Eagle!";
+               break;
+            case -1:
+               result.text = "Birdie";
+               break;
+            case 0:
+               result.text = "Par!";
+               break;
+            case 1:
+               result.text = "Bogey";
+               break;
+            case 2:
+               result.text = "Double-Bogey";
+               break;
+            case 3:
+               result.text = "Tripple-Bogiy";
+               break;
+
+            default:
+               if (hits - par < -4)
+                  result.text = "Condor!";
+               else
+                  result.text = (hits - par) + "-Over-Par";
+
+               break;
+
+         }
+
+      
    }
 
 
