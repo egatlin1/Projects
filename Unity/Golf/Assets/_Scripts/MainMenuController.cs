@@ -17,7 +17,6 @@ public class MainMenuController : MonoBehaviour
 
    }
 
-
    public void LoadLevel( string name )
    {
       sceneController.LoadLevel(name);
@@ -26,6 +25,11 @@ public class MainMenuController : MonoBehaviour
    public void LoadLevelSingle( string name )
    {
       sceneController.LoadLevelOneShot(name);
+   }
+
+   public void RestartLevel ( )
+   {
+      sceneController.ReloadCurrentLevel();
    }
 
    public void ExitProgram ( )
