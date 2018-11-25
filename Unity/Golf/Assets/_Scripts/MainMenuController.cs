@@ -27,11 +27,6 @@ public class MainMenuController : MonoBehaviour
       sceneController.LoadLevelOneShot(name);
    }
 
-   public void RestartLevel ( )
-   {
-      sceneController.ReloadCurrentLevel();
-   }
-
    public void ExitProgram ( )
    {
       sceneController.ExitGame();
