@@ -12,15 +12,19 @@ public class Hole : MonoBehaviour
 
    bool inHole = false;
    public Text text;
+
+   [SerializeField] GameObject cameraPos;
    GolfBallController golfball;
    SceneController sceneController;
    HitCounter hit;
+   Audience audience;
 
    private void Start ( )
    {
       golfball = FindObjectOfType<GolfBallController>();
       sceneController = FindObjectOfType<SceneController>();
       hit = FindObjectOfType<HitCounter>();
+      audience = GetComponent<Audience>();
    }
 
    private void Update ( )
@@ -42,6 +46,8 @@ public class Hole : MonoBehaviour
          Debug.Log("in the hole!!!!!");
          Invoke("RoundOver", timeBrforeNextLevel);
          other.GetComponent<GolfBallController>().canReset = false;
+         Camera.main.transform.position = cameraPos.transform.position;
+         audience.StartApplause();
          inHole = true;
       }
    }

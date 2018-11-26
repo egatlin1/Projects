@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GolfBall
   - Flag
+  - Hands
   layers:
   - Default
   - TransparentFX
