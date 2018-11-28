@@ -16,6 +16,9 @@ public class GolfBallController : MonoBehaviour
    private bool hasBeenHit = false;
    private bool isMaxHits = false;
    public Vector3 startingPos;
+
+   private float slowBallTime = 2f;
+   private float slowBallCountDown = 2f;
    
    private LineRenderer directionLine;
    private CameraLookAt m_camera;
@@ -95,8 +98,14 @@ public class GolfBallController : MonoBehaviour
 
       if (m_rigidbody.velocity.magnitude < .5f && hasBeenHit && startingPos != transform.position && canReset)
       {
-         ResetBall();
-         isMaxHits = counter.MaxHits();
+         if (slowBallCountDown <= 0)
+         {
+            ResetBall();
+            isMaxHits = counter.MaxHits();
+            slowBallCountDown = slowBallTime;
+         }
+         else
+            slowBallCountDown -= Time.deltaTime;
       }
    }
 
