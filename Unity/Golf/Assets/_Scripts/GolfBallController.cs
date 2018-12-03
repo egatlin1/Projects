@@ -97,7 +97,6 @@ public class GolfBallController : MonoBehaviour
             Vector3 angle = rotation.eulerAngles;
             angle.x = (angle.x > 180) ? angle.x - 360 : angle.x;
             angle.x = Mathf.Clamp(angle.x, -60, 0);
-            Debug.Log(angle);
             transform.rotation = Quaternion.Euler(angle);
         }
 

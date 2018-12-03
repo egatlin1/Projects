@@ -43,7 +43,6 @@ public class Hole : MonoBehaviour
       if (other.tag == "GolfBall")
       {
          hit.ShowResults();
-         Debug.Log("in the hole!!!!!");
          Invoke("RoundOver", timeBrforeNextLevel);
          other.GetComponent<GolfBallController>().canReset = false;
          Camera.main.transform.position = cameraPos.transform.position;
