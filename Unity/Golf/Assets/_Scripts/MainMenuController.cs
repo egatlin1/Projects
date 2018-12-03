@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
    void Start ( )
    {
       sceneController = FindObjectOfType<SceneController>();
+      Time.timeScale = 1f;
    }
 
    // Update is called once per frame
