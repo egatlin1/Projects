@@ -9,8 +9,11 @@ public class Rain_ResetGame : MonoBehaviour
 
     public GameObject level;
     public GameObject credits;
+    public GameObject clearBombs;
 
     public ParticleSystem fireworks;
+    public SpriteRenderer fadeScreen;
+
 
     private float spawnerReducitonTime;
     private int startingLives;
@@ -41,15 +44,18 @@ public class Rain_ResetGame : MonoBehaviour
         Rain_Player.instance.ResetAllAbilities();
 
         fireworks.Stop();
-        yield return new WaitForSeconds(1);
+        clearBombs.SetActive(true);
         credits.SetActive(false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
+        clearBombs.SetActive(false);
 
-        while ( Camera.main.transform.position.y < 0 )
+        while ( fadeScreen.color.a > 0 )
         {
-            Camera.main.transform.position = Vector3.Slerp(Camera.main.transform.position, new Vector3(0, 0, -10), Time.deltaTime);
-            if ( Vector3.Distance(Camera.main.transform.position, new Vector3(0, 0, -10)) < .1f )
-                Camera.main.transform.position = new Vector3(0, 0, -10);
+
+            fadeScreen.color = new Color(fadeScreen.color.r,
+                                         fadeScreen.color.g,
+                                         fadeScreen.color.b,
+                                         fadeScreen.color.a - .01f);
             yield return null;
         }
 

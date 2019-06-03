@@ -60,22 +60,22 @@ public class Rain_BombSpawner : MonoBehaviour
 
         int rand = Random.Range(1, 101); // 1-100
 
-        if ( rand >= 1 && rand <= 3 ) // 3% chance
+        if ( rand >= 1 && rand <= 2 ) // 2% chance
         {
             Instantiate(healthBomb, pos, transform.rotation);
             // red
         }
-        else if ( rand >= 20 && rand <= 22 ) // 2% chance
+        else if ( rand >= 20 && rand <= 21 ) // 1% chance
         {
             Instantiate(blanketBomb, pos, transform.rotation);
             // cyan
         }
-        else if ( rand >= 30 && rand <= 33 ) // 3% chance
+        else if ( rand >= 30 && rand <= 32 ) // 2% chance
         {
             Instantiate(snipperBomb, pos, transform.rotation);
             // magenta
         }
-        else if ( rand >= 40 && rand <= 45 ) // 2%
+        else if ( rand >= 40 && rand <= 41 ) // 1%
         {
             Instantiate(rapidBomb, pos, transform.rotation);
             // yellow

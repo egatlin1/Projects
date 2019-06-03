@@ -27,6 +27,8 @@ public class Rain_Lives : MonoBehaviour
     public GameObject levelUI;
     public GameObject creditUI;
     public ParticleSystem Fireworks;
+    public SpriteRenderer fadeScreen;
+
 
     // Start is called before the first frame update
     void Start ( )
@@ -77,15 +79,16 @@ public class Rain_Lives : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         levelUI.SetActive(false);
-        yield return new WaitForSeconds(2);
 
         
         Fireworks.Play();
-        while ( Camera.main.transform.position.y > -10 )
+        while ( fadeScreen.color.a < 1 )
         {
-            Camera.main.transform.position = Vector3.Slerp(Camera.main.transform.position, new Vector3(0, -10, -10), Time.deltaTime);
-            if ( Vector3.Distance(Camera.main.transform.position, new Vector3(0, -10, -10)) < .1f )
-                Camera.main.transform.position = new Vector3(0, -10, -10);
+
+            fadeScreen.color = new Color(fadeScreen.color.r,
+                                         fadeScreen.color.g,
+                                         fadeScreen.color.b,
+                                         fadeScreen.color.a + .01f);
             yield return null;
         }
 
