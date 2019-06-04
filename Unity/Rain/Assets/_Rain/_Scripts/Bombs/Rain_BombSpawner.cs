@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rain_BombSpawner : MonoBehaviour
 {
+
+    #region PublicVariables
     public float time;
     public float spawnRangeX = 5f;
     public float spawnRangeY = .5f;
@@ -11,15 +13,20 @@ public class Rain_BombSpawner : MonoBehaviour
     public float maxTimeBetweenBombs = 1.5f;
     public float minTimeBetweenBombs = .1f;
     public float reducitonTime = 0.005f;
+    #endregion
 
+    #region Bombs
     public GameObject bomb;
     public GameObject healthBomb;
     public GameObject snipperBomb;
     public GameObject blanketBomb;
     public GameObject rapidBomb;
-
+    public GameObject bigBomb;
+    #endregion
 
     private bool hasUpgraded = false;
+    private bool canSpawnBigBombs = false;
+
 
     // Start is called before the first frame update
     void Start ( )
@@ -41,14 +48,25 @@ public class Rain_BombSpawner : MonoBehaviour
     {
         if ( !hasUpgraded && ( Rain_ScoreKeeper.instance.GetScore() == 50 || 
                                Rain_ScoreKeeper.instance.GetScore() == 100 ||
-                               Rain_ScoreKeeper.instance.GetScore() == 200 ) )
+                               Rain_ScoreKeeper.instance.GetScore() == 200 ||
+                               Rain_ScoreKeeper.instance.GetScore() == 250  ||
+                               Rain_ScoreKeeper.instance.GetScore() == 300 ) )
         {
-            reducitonTime -= reducitonTime * .5f;
+            if ( Rain_ScoreKeeper.instance.GetScore() == 250 )
+            {
+                canSpawnBigBombs = true;
+                reducitonTime *= 2;
+                time *= 2;
+            }
+            else
+                reducitonTime -= reducitonTime * .5f;
             hasUpgraded = true;
         }
         else if ( hasUpgraded && ( Rain_ScoreKeeper.instance.GetScore() == 51 ||
                                    Rain_ScoreKeeper.instance.GetScore() == 101 ||
-                                   Rain_ScoreKeeper.instance.GetScore() == 201 ) ) 
+                                   Rain_ScoreKeeper.instance.GetScore() == 201 ||
+                                   Rain_ScoreKeeper.instance.GetScore() == 251 ||
+                                   Rain_ScoreKeeper.instance.GetScore() == 301 ) ) 
             hasUpgraded = false;
     }
 
@@ -60,34 +78,46 @@ public class Rain_BombSpawner : MonoBehaviour
 
         int rand = Random.Range(1, 101); // 1-100
 
+
+        Instantiate(PickBomb(rand), pos, transform.rotation);
+
+    }
+
+    private GameObject PickBomb ( int rand )
+    {
         if ( rand >= 1 && rand <= 2 ) // 2% chance
         {
-            Instantiate(healthBomb, pos, transform.rotation);
+            return healthBomb;
             // red
         }
         else if ( rand >= 20 && rand <= 21 ) // 1% chance
         {
-            Instantiate(blanketBomb, pos, transform.rotation);
+            return blanketBomb;
             // cyan
         }
         else if ( rand >= 30 && rand <= 32 ) // 2% chance
         {
-            Instantiate(snipperBomb, pos, transform.rotation);
+            return snipperBomb;
             // magenta
         }
         else if ( rand >= 40 && rand <= 41 ) // 1%
         {
-            Instantiate(rapidBomb, pos, transform.rotation);
+            return rapidBomb;
             // yellow
+        }
+        else if ( canSpawnBigBombs && rand >= 70 && rand <= 90 ) // 20%
+        {
+            return bigBomb;
+            // gray
         }
         else
         {
-            Instantiate(bomb, pos, transform.rotation);
+            return bomb;
             // white
         }
-        
-
     }
+
+
 
 
     public void StartGame ( )
@@ -107,7 +137,6 @@ public class Rain_BombSpawner : MonoBehaviour
             yield return new WaitForSeconds(time);
             if ( time > minTimeBetweenBombs )
                 time -= reducitonTime;
-            Debug.Log("Spawning");
 
         }
     }

@@ -47,7 +47,7 @@ public class Rain_Bomb : MonoBehaviour
 
     public virtual void OnDeath ( )
     {
-
+        
         Rain_ScoreKeeper.instance.AddScore();
         Destroy(gameObject);
     }

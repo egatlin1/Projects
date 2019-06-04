@@ -38,6 +38,11 @@ public class Rain_ScoreKeeper : MonoBehaviour
         score++;
         text.text = "Score: " + score;
     }
+    public void AddScore ( int amount )
+    {
+        score += amount;
+        text.text = "Score: " + score;
+    }
 
     public int GetScore ( )
     {

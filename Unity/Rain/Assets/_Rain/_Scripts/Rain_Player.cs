@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Rain_Player : MonoBehaviour
 {
 
+    #region PublicVariables
     public float colorChangeSpeed = 0.0005f;
 
 
     public GameObject bullet;
     public SpriteRenderer[] sRenderers;
     public Gradient gradient;
+    public GameObject pauseMenu;
 
     public Slider snipperShotSlider;
     public float snipperShotDuration = 20;
@@ -19,12 +21,13 @@ public class Rain_Player : MonoBehaviour
     public float blanketShotDuration = 10;
     public Slider rapidShotSlider;
     public float rapidShotDuration = 15;
+    #endregion
 
-
-
+    #region PrivateVariables
     private float blanketShotTime = 0;
     private float snipperShotTime = 0;
     private float rapidShotTime = 0;
+    #endregion
 
     #region Singleton
 
@@ -53,6 +56,9 @@ public class Rain_Player : MonoBehaviour
     // Update is called once per frame
     void Update ( )
     {
+        if ( pauseMenu.activeSelf )
+            return;
+
         if ( Input.GetMouseButtonDown(0) && !Rain_Lives.instance.IsGameOver() )
         {
             SpawnBullet();
@@ -140,6 +146,12 @@ public class Rain_Player : MonoBehaviour
         float colorNum = 0.0f;
         while ( true )
         {
+            if ( pauseMenu.activeSelf)
+            {
+                yield return null;
+                continue;
+            }
+
             for ( int i = 0; i < sRenderers.Length; i++ )
             {
                 sRenderers[i].color = gradient.Evaluate(colorNum % 1);
