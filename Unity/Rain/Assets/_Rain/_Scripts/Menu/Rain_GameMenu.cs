@@ -22,7 +22,7 @@ public class Rain_GameMenu : MonoBehaviour
         }
     }
 
-    private void PauseMenu ( )
+    public void PauseMenu ( )
     {
         if ( Rain_Lives.instance.IsGameOver() )
             return;

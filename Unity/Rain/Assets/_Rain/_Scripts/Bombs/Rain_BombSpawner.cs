@@ -76,7 +76,7 @@ public class Rain_BombSpawner : MonoBehaviour
         Vector3 pos = new Vector3(transform.position.x + Random.Range(-spawnRangeX, spawnRangeX),
                                   transform.position.y + Random.Range(-spawnRangeY, spawnRangeY));
 
-        int rand = Random.Range(1, 101); // 1-100
+        int rand = Random.Range(1, 1001); // 1-100
 
 
         Instantiate(PickBomb(rand), pos, transform.rotation);
@@ -85,27 +85,27 @@ public class Rain_BombSpawner : MonoBehaviour
 
     private GameObject PickBomb ( int rand )
     {
-        if ( rand >= 1 && rand <= 2 ) // 2% chance
+        if ( rand >= 10 && rand <= 20 ) // 2% chance
         {
             return healthBomb;
             // red
         }
-        else if ( rand >= 20 && rand <= 21 ) // 1% chance
+        else if ( rand >= 200 && rand <= 210 ) // 1% chance
         {
             return blanketBomb;
             // cyan
         }
-        else if ( rand >= 30 && rand <= 32 ) // 2% chance
+        else if ( rand >= 300 && rand <= 320 ) // 2% chance
         {
             return snipperBomb;
             // magenta
         }
-        else if ( rand >= 40 && rand <= 41 ) // 1%
+        else if ( rand >= 400 && rand <= 410 ) // 1%
         {
             return rapidBomb;
             // yellow
         }
-        else if ( canSpawnBigBombs && rand >= 70 && rand <= 90 ) // 20%
+        else if ( canSpawnBigBombs && rand >= 700 && rand <= 900 ) // 20%
         {
             return bigBomb;
             // gray
