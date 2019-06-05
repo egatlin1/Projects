@@ -30,6 +30,10 @@ public class Rain_Lives : MonoBehaviour
     public SpriteRenderer fadeScreen;
 
 
+
+    private bool hasLostLife = false;
+
+
     // Start is called before the first frame update
     void Start ( )
     {
@@ -52,6 +56,7 @@ public class Rain_Lives : MonoBehaviour
 
     public void LoseLife ( )
     {
+        hasLostLife = true;
         lives--;
         if ( lives < 0 )
             lives = 0;
@@ -67,6 +72,7 @@ public class Rain_Lives : MonoBehaviour
     {
         lives = newLives;
         text.text = "LIves:  " + lives;
+        hasLostLife = false;
     }
 
 
@@ -74,6 +80,12 @@ public class Rain_Lives : MonoBehaviour
     {
         return lives <= 0;
     }
+
+    public bool HasLosAtLife ( )
+    {
+        return hasLostLife;
+    }
+
 
     IEnumerator GameOver ( )
     {

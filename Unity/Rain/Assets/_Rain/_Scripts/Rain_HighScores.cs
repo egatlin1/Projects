@@ -28,7 +28,6 @@ public class Rain_HighScores : MonoBehaviour
         if ( data != null )
         {
             highScoreFormats = data.highScores;
-            Debug.Log("LoadingData");
         }
         else
             Init();
@@ -111,20 +110,11 @@ public class Rain_HighScores : MonoBehaviour
         SortScores(newScore);
     }
 
-    //private void Save ( )
-    //{
-    //    Rain_GameManager manager = FindObjectOfType<Rain_GameManager>();
-    //    manager.SetHighScores(highScoreFormats);
-    //}
-
-
-
     public void DisplayScores ( )
     {
         for ( int i = 0; i < highScoreFormats.Length; i++ )
         {
             highScores[i].text = highScoreFormats[i].ToString();
-            Debug.Log("Index " + i + ": " + highScores[i].text + " = " + highScoreFormats[i].ToString());
         }
     }
 

@@ -13,6 +13,7 @@ public class Rain_MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start ( )
     {
+        Time.timeScale = 1;
         scene = FindObjectOfType<SceneController>();
     }
 
@@ -31,6 +32,7 @@ public class Rain_MainMenu : MonoBehaviour
 
     public void SceneChange ( string sceneName )
     {
+        FindObjectOfType<Rain_GameManager>().Save();
         scene.LoadScene(sceneName);
     }
 

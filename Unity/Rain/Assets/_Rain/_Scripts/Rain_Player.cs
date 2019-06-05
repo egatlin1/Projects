@@ -50,7 +50,7 @@ public class Rain_Player : MonoBehaviour
         snipperShotSlider.maxValue = snipperShotDuration;
         blanketShotSlider.maxValue = blanketShotDuration;
         rapidShotSlider.maxValue = rapidShotDuration;
-
+        gradient = FindObjectOfType<Rain_GameManager>().GetActiveGradient();
     }
 
     // Update is called once per frame

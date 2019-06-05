@@ -33,7 +33,6 @@ public class Rain_GameManager : MonoBehaviour
         if ( data != null )
         {
             highScores = data.highScores;
-            achievements = data.Achievements;
             activeGradientNum = data.activeGradientNum;
             
         }
@@ -42,8 +41,16 @@ public class Rain_GameManager : MonoBehaviour
 
     public void SetGradient ( Gradient grad, int num )
     {
-        activeGradient = grad;
+        activeGradient.colorKeys = grad.colorKeys;
         activeGradientNum = num;
+        Save();
+    }
+
+    public void SetGradientWithoutSaving ( Gradient grad, int num )
+    {
+        activeGradient.colorKeys = grad.colorKeys;
+        activeGradientNum = num;
+        
     }
 
 
@@ -60,6 +67,16 @@ public class Rain_GameManager : MonoBehaviour
         Save();
     }
 
+    public void SetAchievements ( bool[] ach )
+    {
+        achievements = ach;
+
+    }
+
+    public Gradient GetActiveGradient ( )
+    {
+        return activeGradient;
+    }
 
 
     public void Save ( )
