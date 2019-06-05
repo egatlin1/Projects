@@ -701,6 +701,112 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d85529c0200b2c344b4843ea70f17acc, type: 3}
+--- !u!1 &588452199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588452201}
+  - component: {fileID: 588452200}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &588452200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588452199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0bd9998cd967a54da2e9b2c8a205926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainAch: {fileID: 0}
+  activeGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0.89550066, a: 1}
+    key2: {r: 0, g: 0.023376942, b: 1, a: 0}
+    key3: {r: 0, g: 0.990309, b: 1, a: 0}
+    key4: {r: 0, g: 1, b: 0.2531724, a: 0}
+    key5: {r: 0.9942193, g: 1, b: 0, a: 0}
+    key6: {r: 1, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 8481
+    ctime2: 22166
+    ctime3: 32768
+    ctime4: 45104
+    ctime5: 56283
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  highScores:
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  - score: 0
+    name: 
+    date: 
+  achievements: 
+  activeGradientNum: 0
+--- !u!4 &588452201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588452199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731630980
 GameObject:
   m_ObjectHideFlags: 0

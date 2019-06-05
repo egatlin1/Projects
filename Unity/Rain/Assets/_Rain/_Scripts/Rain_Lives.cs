@@ -94,6 +94,10 @@ public class Rain_Lives : MonoBehaviour
 
 
         creditUI.SetActive(true);
+        yield return null;
+        Rain_HighScores.instance.AddNewScore(Rain_ScoreKeeper.instance.GetScore());
+        yield return null;
+        Rain_HighScores.instance.DisplayScores();
 
         finalText.text = "Final Score: " + Rain_ScoreKeeper.instance.GetScore();
         yield return null;

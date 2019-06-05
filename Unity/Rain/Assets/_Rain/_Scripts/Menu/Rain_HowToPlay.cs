@@ -27,7 +27,7 @@ public class Rain_HowToPlay : MonoBehaviour
     IEnumerator WriteInstructions ( )
     {
         int length = instructions.Length;
-        for ( int i = 0; i < length; i++ )
+        for ( int i = 0; i <= length; i++ )
         {
             tmp.text = instructions.Substring(0, i);
             yield return null;
