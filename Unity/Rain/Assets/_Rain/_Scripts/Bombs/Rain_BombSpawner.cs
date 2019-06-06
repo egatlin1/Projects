@@ -22,6 +22,7 @@ public class Rain_BombSpawner : MonoBehaviour
     public GameObject blanketBomb;
     public GameObject rapidBomb;
     public GameObject bigBomb;
+    public GameObject fullAutoBomb;
     #endregion
 
     private bool hasUpgraded = false;
@@ -95,17 +96,22 @@ public class Rain_BombSpawner : MonoBehaviour
             return blanketBomb;
             // cyan
         }
-        else if ( rand >= 300 && rand <= 320 ) // 2% chance
+        else if ( rand >= 300 && rand <= 315 ) // 1.5% chance
         {
             return snipperBomb;
             // magenta
         }
-        else if ( rand >= 400 && rand <= 410 ) // 1%
+        else if ( rand >= 400 && rand <= 407 ) // .7%
         {
             return rapidBomb;
             // yellow
         }
-        else if ( canSpawnBigBombs && rand >= 700 && rand <= 900 ) // 20%
+        else if ( rand >= 500 && rand <= 505 && Rain_ScoreKeeper.instance.GetScore() >= 200 ) // .5%
+        {
+            return fullAutoBomb;
+            // green
+        }
+        else if ( canSpawnBigBombs && rand >= 700 && rand <= 950 ) // 25%
         {
             return bigBomb;
             // gray

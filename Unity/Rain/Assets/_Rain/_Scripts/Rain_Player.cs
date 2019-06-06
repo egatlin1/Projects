@@ -21,12 +21,16 @@ public class Rain_Player : MonoBehaviour
     public float blanketShotDuration = 10;
     public Slider rapidShotSlider;
     public float rapidShotDuration = 15;
+    public Slider fullAutoSlider;
+    public float fullAutoDuration = 10;
     #endregion
 
     #region PrivateVariables
     private float blanketShotTime = 0;
     private float snipperShotTime = 0;
     private float rapidShotTime = 0;
+    private float fullAutoShotTime = 0;
+    private float subFullAutoShotTime = 0;
     #endregion
 
     #region Singleton
@@ -50,6 +54,7 @@ public class Rain_Player : MonoBehaviour
         snipperShotSlider.maxValue = snipperShotDuration;
         blanketShotSlider.maxValue = blanketShotDuration;
         rapidShotSlider.maxValue = rapidShotDuration;
+        fullAutoSlider.maxValue = fullAutoDuration;
         gradient = FindObjectOfType<Rain_GameManager>().GetActiveGradient();
     }
 
@@ -68,6 +73,10 @@ public class Rain_Player : MonoBehaviour
             SpawnBullet();
         }
 
+
+        if ( fullAutoShotTime > 0 )
+            FullAUtoShot();
+
         AdjustTimers();
 
     }
@@ -84,10 +93,14 @@ public class Rain_Player : MonoBehaviour
             snipperShotTime -= Time.deltaTime;
         if ( rapidShotTime > 0 )
             rapidShotTime -= Time.deltaTime;
+        if ( fullAutoShotTime > 0 )
+            fullAutoShotTime -= Time.deltaTime;
+
 
         snipperShotSlider.value = snipperShotTime;
         blanketShotSlider.value = blanketShotTime;
         rapidShotSlider.value = rapidShotTime;
+        fullAutoSlider.value = fullAutoShotTime;
     }
 
 
@@ -141,6 +154,17 @@ public class Rain_Player : MonoBehaviour
 
     }
 
+    private void FullAUtoShot ( )
+    {
+        if ( subFullAutoShotTime <= 0 )
+        {
+            subFullAutoShotTime = 0.1f;
+            SpawnBullet();
+        }
+        else
+            subFullAutoShotTime -= Time.deltaTime;
+    }
+
     IEnumerator ColorCycle ( )
     {
         float colorNum = 0.0f;
@@ -189,6 +213,11 @@ public class Rain_Player : MonoBehaviour
         blanketShotTime = 0;
     }
 
+
+    public void StartFullAutoShot ( )
+    {
+        fullAutoShotTime = fullAutoDuration; 
+    }
 
     public void ResetAllAbilities ( )
     {
