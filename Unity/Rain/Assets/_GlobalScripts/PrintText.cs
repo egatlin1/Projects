@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Rain_HowToPlay : MonoBehaviour
+public class PrintText : MonoBehaviour
 {
 
     public TextMeshProUGUI tmp;
@@ -11,20 +11,20 @@ public class Rain_HowToPlay : MonoBehaviour
     private string instructions;
 
     // Start is called before the first frame update
-    void Start ( )
+    void Start ()
     {
 
     }
 
 
-    public void OnActivation ( )
+    public void OnActivation ()
     {
         instructions = tmp.text;
         tmp.text = "";
         StartCoroutine(WriteInstructions());
     }
 
-    IEnumerator WriteInstructions ( )
+    IEnumerator WriteInstructions ()
     {
         int length = instructions.Length;
         for ( int i = 0; i <= length; i++ )
@@ -38,7 +38,7 @@ public class Rain_HowToPlay : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update ( )
+    void Update ()
     {
 
     }

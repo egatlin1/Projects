@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rain_MainMenu : MonoBehaviour
 {
 
-    public Rain_HowToPlay howToPlay;
+    public PrintText howToPlay;
 
     SceneController scene;
     
