@@ -2928,7 +2928,7 @@ MonoBehaviour:
   spawnRangeX: 4
   spawnRangeY: 1
   maxTimeBetweenBombs: 1.5
-  minTimeBetweenBombs: 0.2
+  minTimeBetweenBombs: 1.75
   reducitonTime: 0.01
   bomb: {fileID: 8428078161404713269, guid: 3cb8a4a82f73bdd4290b02c1bdae75cf, type: 3}
   healthBomb: {fileID: 4781838840935810065, guid: 8e65592900ff7f44b8db08af0f6cc375,

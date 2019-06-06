@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Rain_Achievements : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class Rain_Achievements : MonoBehaviour
 
     public Gradient[] gradients;
     public GameObject[] blockOuts;
+
+    public TextMeshProUGUI[] titles;
+
+
+    private Color selectedColor = Color.yellow;
 
     // Start is called before the first frame update
     void Start ()
@@ -35,6 +41,7 @@ public class Rain_Achievements : MonoBehaviour
             manager.SetGradientWithoutSaving(gradients[activeGradientNum], activeGradientNum); // set up last active achievement
 
         }
+        titles[activeGradientNum].color = selectedColor; // set active gradient title to yellow to show which is selected
         achievements[0] = true; // Default always active
         manager.SetAchievements(achievements);
 
@@ -64,8 +71,19 @@ public class Rain_Achievements : MonoBehaviour
     {
         activeGradientNum = newNum;
         manager.SetGradient(gradients[newNum], newNum);
+        ResetTitleColors();
+        titles[activeGradientNum].color = selectedColor;
         
     }
+
+    private void ResetTitleColors ( )
+    {
+        for ( int i = 0; i < titles.Length; i++ )
+        {
+            titles[i].color = Color.white;
+        }
+    }
+
 
     public bool[] GetAchievements ( )
     {

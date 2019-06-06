@@ -91,7 +91,7 @@ public class Rain_BombSpawner : MonoBehaviour
             return healthBomb;
             // red
         }
-        else if ( rand >= 200 && rand <= 210 ) // 1% chance
+        else if ( rand >= 200 && rand <= 202 && Rain_ScoreKeeper.instance.GetScore() >= 200 ) // .2% chance
         {
             return blanketBomb;
             // cyan
@@ -106,7 +106,7 @@ public class Rain_BombSpawner : MonoBehaviour
             return rapidBomb;
             // yellow
         }
-        else if ( rand >= 500 && rand <= 505 && Rain_ScoreKeeper.instance.GetScore() >= 200 ) // .5%
+        else if ( rand >= 500 && rand <= 525 ) // 2.5%
         {
             return fullAutoBomb;
             // green
