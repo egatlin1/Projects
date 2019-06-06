@@ -74,7 +74,7 @@ public class Rain_Player : MonoBehaviour
         }
 
 
-        if ( fullAutoShotTime > 0 )
+        if ( fullAutoShotTime > 0 && !Rain_Lives.instance.IsGameOver() )
             FullAUtoShot();
 
         AdjustTimers();
