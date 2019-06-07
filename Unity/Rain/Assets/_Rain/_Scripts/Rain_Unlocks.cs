@@ -39,6 +39,10 @@ public class Rain_Unlocks : MonoBehaviour
             CheckSecondAchievement();
         if ( !achievements[3] )
             CheckThirdAchievement();
+        if ( !achievements[4] )
+            CheckFourthAchievement();
+        if ( !achievements[5] )
+            CheckFifthAchievement();
 
     }
 
@@ -75,5 +79,23 @@ public class Rain_Unlocks : MonoBehaviour
         manager.SetAchievements(achievements);
     }
 
+    private void CheckFourthAchievement ( )
+    {
+        if ( Rain_ScoreKeeper.instance.GetScore() >= 500 )
+        {
+            achievements[4] = true;
+            achievementTextBlockOut[3].SetActive(false);
+        }
+        manager.SetAchievements(achievements);
+    }
 
+    private void CheckFifthAchievement ( )
+    {
+        if ( Rain_ScoreKeeper.instance.GetScore() >= 1000 )
+        {
+            achievements[5] = true;
+            achievementTextBlockOut[4].SetActive(false);
+        }
+        manager.SetAchievements(achievements);
+    }
 }
