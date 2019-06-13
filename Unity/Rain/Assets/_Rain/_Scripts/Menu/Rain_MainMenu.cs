@@ -38,7 +38,8 @@ public class Rain_MainMenu : MonoBehaviour
 
     public void ExitGame ( )
     {
-        Application.Quit();
+        Destroy(FindObjectOfType<Rain_GameManager>().gameObject);
+        FindObjectOfType<SceneController>().LoadScene("Arcade");
     }
 
 }

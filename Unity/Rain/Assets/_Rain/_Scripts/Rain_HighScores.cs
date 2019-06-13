@@ -78,7 +78,9 @@ public class Rain_HighScores : MonoBehaviour
         {
             newArr[i] = highScoreFormats[i];
         }
-        newArr[10] = new HighScoreFormat(newScore, "You", System.DateTime.Now.ToString("MM/dd"));
+        newArr[10] = new HighScoreFormat(newScore, 
+                                         FindObjectOfType<SceneController>().playerName, 
+                                         System.DateTime.Now.ToString("MM/dd"));
 
         HighScoreFormat tmp;
 

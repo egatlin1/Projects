@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
 
+    public string playerName = "Player";
+
     #region Singleton
     private void Awake ()
     {
