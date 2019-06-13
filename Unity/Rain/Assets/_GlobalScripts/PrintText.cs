@@ -8,6 +8,8 @@ public class PrintText : MonoBehaviour
 
     public TextMeshProUGUI tmp;
 
+    public int framesBetweenLetters = 3;
+
     private string instructions;
 
     // Start is called before the first frame update
@@ -30,9 +32,12 @@ public class PrintText : MonoBehaviour
         for ( int i = 0; i <= length; i++ )
         {
             tmp.text = instructions.Substring(0, i);
-            yield return null;
-            yield return null;
-            yield return null;
+
+
+            for ( int j = 0; j < framesBetweenLetters; j++ )
+            {
+                yield return null;
+            }
         }
     }
 
